@@ -26,6 +26,7 @@ module.exports = (ENV, ROOT) => {
       },
       port: 8080,
       inline: true,
+      progress: true,
       proxy: {
         '**': 'http://0.0.0.0:8000'
       }
