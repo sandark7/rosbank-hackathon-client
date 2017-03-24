@@ -14,10 +14,9 @@ class OfferController extends Controller
      */
     public function index()
     {
-        return response()->json([
-            'name' => 'Abigail',
-            'state' => 'CA'
-        ]);
+        $offer = Offer::all()->toArray();
+
+        return response()->json($offer);
     }
 
     /**
@@ -84,5 +83,10 @@ class OfferController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function listAction()
+    {
+
     }
 }
