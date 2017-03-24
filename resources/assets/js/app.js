@@ -2,7 +2,7 @@ window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 
-require('bootstrap-styl');
+require('_nodemodules/bootstrap/dist/js/bootstrap.min.js');
 require('_stylesheets/app');
 
 window.axios = require('axios');
