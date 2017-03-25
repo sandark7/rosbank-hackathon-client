@@ -5,7 +5,10 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Список предложений</div>
+                    <div class="panel-heading">
+                        <h4>Список предложений</h4>
+                        <a href="{{ route('offer_add') }}" class="btn btn-success pull-right">Создать</a>
+                    </div>
 
                     <div class="panel-body">
                     <table class="table">
@@ -23,7 +26,7 @@
                         <td>{{ $offer->name }}</td>
                         <td>{{ $offer->description }}</td>
                         <td>{{ $offer->cashback }}%</td>
-                        <td>{{ $offer->created_at }}</td>
+                        <td>{{ $offer->created_at->format('jS F Y') }}</td>
                     </tr>
                     @endforeach
                     </tbody> </table>
