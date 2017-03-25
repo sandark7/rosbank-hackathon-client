@@ -6,7 +6,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Список точек</h4>
+                        <h4>Список торговых точек</h4>
                         <a href="{{ route('point_add') }}" class="btn btn-success pull-right">Создать</a>
                     </div>
 
