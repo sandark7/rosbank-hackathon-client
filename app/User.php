@@ -40,8 +40,10 @@ class User extends Authenticatable
         return $this->hasMany(Offer::class);
     }
 
+    /*
     public function points()
     {
         return $this->hasMany(Point::class);
     }
+    */
 }
