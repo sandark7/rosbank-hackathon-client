@@ -28,5 +28,7 @@ Route::get('/offers/{client_id}/', 'OfferController@indexByClient');
 
 Route::get('/push/{client_id}/', 'OfferController@pushToClient');
 
+Route::get('/bigdata/{point_id}/', 'AIController@indexByPoint');
+
 
 Route::resource('offer', 'OfferController');
