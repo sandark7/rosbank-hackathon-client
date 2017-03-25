@@ -248,7 +248,7 @@
                             <div class="form-group{{ $errors->has('accept') ? ' has-error' : '' }}">
                                 <div class="col-sm-offset-4 col-md-6">
                                     <div class="checkbox">
-                                        <label class="fz14">
+                                        <label>
                                             <input id="company_name" type="checkbox" name="accept" value="1" required autofocus>
                                                 Я согласен с обработкой моих персональных данных
                                         </label>
