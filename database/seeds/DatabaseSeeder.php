@@ -34,7 +34,8 @@ class UsersTableSeeder extends Seeder {
         ]);
 
         Offer::create([
-            'name' => 'Кофе Хауз',
+            'name' => 'Акция ' . Offer::getDefaultName(),
+            'company_name' => Offer::getDefaultName(),
             'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/logo.png',
             'description' => 'Получи кешбек при покупки второй чашки кофе',
             'user_id' => 1,
@@ -44,7 +45,8 @@ class UsersTableSeeder extends Seeder {
         ]);
 
         Offer::create([
-            'name' => 'Кофе Хауз',
+            'name' => 'Акция ' . Offer::getDefaultName(),
+            'company_name' => Offer::getDefaultName(),
             'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/logo.png',
             'description' => 'Получи кешбек при покупки первой чашки кофе',
             'user_id' => 1,
@@ -54,7 +56,8 @@ class UsersTableSeeder extends Seeder {
         ]);
 
         Offer::create([
-            'name' => 'Starbucks',
+            'name' => 'Акция Starbucks',
+            'company_name' => 'Starbucks',
             'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/starbucks.png',
             'description' => 'Получи кешбек при покупки второй чашки кофе',
             'user_id' => 2,

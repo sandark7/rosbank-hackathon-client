@@ -166,6 +166,8 @@ class OfferController extends Controller
         $offer->logo = $offer->getDefaultLogo();
         $offer->description = $request->description;
         $offer->cashback = $request->cashback;
+        $offer->is_push = 0;
+        $offer->company_name = Offer::getDefaultName();
         $offer->save();
 
         //return redirect('/home/offer/list/');

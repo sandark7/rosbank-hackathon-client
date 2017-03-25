@@ -20,4 +20,9 @@ class Offer extends Model
     {
         return 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/logo.png';
     }
+
+    public static function getDefaultName()
+    {
+        return 'Смузишная №1';
+    }
 }

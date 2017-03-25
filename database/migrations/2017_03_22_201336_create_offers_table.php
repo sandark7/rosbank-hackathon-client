@@ -22,6 +22,7 @@ class CreateOffersTable extends Migration
             $table->integer('is_push')->nullable();
             $table->string('push_text')->nullable();
             $table->string('cashback');
+            $table->string('company_name')->nullable();
             $table->timestamps();
         });
     }
