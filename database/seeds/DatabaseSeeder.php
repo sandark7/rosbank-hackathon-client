@@ -23,13 +23,6 @@ class UsersTableSeeder extends Seeder {
     {
         //DB::table('users')->delete();
 
-        User::create([
-            'name' => 'foo bar',
-            'email' => 'foo@bar.com',
-            'company_name' => 'bar company',
-            'password' => '123123',
-        ]);
-
         Offer::create([
             'name' => 'Предложение дня',
             'logo' => 'logo.jpg',
