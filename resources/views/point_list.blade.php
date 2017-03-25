@@ -19,7 +19,7 @@
 
                             @foreach ($points as $point)
                                 <tr>
-                                    <td>{{ $point->address }}</td>
+                                    <td><a href="{{ route('point_detail', ['id' => $point->id]) }}">{{ $point->address }}</a></td>
                                     <td>{{ $point->getTerminalIds() }}</td>
                                     <td>{{ $point->created_at }}</td>
                                 </tr>

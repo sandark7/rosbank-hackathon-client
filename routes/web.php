@@ -41,5 +41,6 @@ Route::get('/home/offer/list/', 'OfferController@listAction')->name('offer_list'
 Route::get('/home/point/add/', 'PointController@addAction')->name('point_add');
 Route::post('/home/point/add/', 'PointController@makeAction')->name('point_add_post');
 Route::get('/home/point/list/', 'PointController@listAction')->name('point_list');
+Route::get('/home/point/{id}', 'PointController@detailAction')->name('point_detail');
 
 Route::get('/home/report', 'CabinetController@report')->name('report');;

@@ -30,8 +30,6 @@ class PointController extends Controller
         return view('point_add');
     }
 
-
-
     /**
      * Cabinet add
      */
@@ -56,4 +54,10 @@ class PointController extends Controller
         return redirect()->route('point_list');
     }
 
+    public function detailAction($id)
+    {
+        $point = Point::where('id', $id)->first();
+
+        return view('point_detail', ['point' => $point]);
+    }
 }
