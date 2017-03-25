@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Offer;
+use App\Point;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
@@ -163,9 +164,10 @@ class OfferController extends Controller
      */
     public function addTargetAction($point_id, $target_id)
     {
-        return view('offer_add' );
+        $point =  Point::where('id', $point_id)->first();
 
-        //return response()->json(['success', ['point_id' => $point_id, 'target_id' => $target_id] ]);
+        return view('offer_add', ['point' => $point, 'target_id' => $target_id] );
+
     }
 
     /**
@@ -191,6 +193,13 @@ class OfferController extends Controller
         $offer->cashback = $request->cashback;
         $offer->is_push = 0;
         $offer->company_name = Offer::getDefaultName();
+
+        $offer->point_id = $request->point_id;
+        $offer->point_address = $request->point_address;
+        $offer->date_from = $request->date_from;
+        $offer->date_to = $request->date_to;
+        $offer->recipient_num = $request->recipient_num;
+
         $offer->save();
 
         return redirect()->route('offer_list');

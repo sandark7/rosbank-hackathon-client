@@ -58,4 +58,21 @@ class Point extends Model
 
         return $bigdata;
     }
+
+    public function getRecipientNum($target_id)
+    {
+        $bigdata = json_decode($this->bigdata, true);
+
+        if ($target_id == 1) {
+            return $bigdata['potential'];
+        }
+
+        if ($target_id == 2) {
+            return $bigdata['sleep'];
+        }
+
+        if ($target_id == 3) {
+            return $bigdata['first'];
+        }
+    }
 }
