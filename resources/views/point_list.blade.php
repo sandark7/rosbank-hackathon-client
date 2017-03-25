@@ -14,7 +14,7 @@
                         <table class="table">
                             <thead><tr>
                                 <th>Адрес</th>
-                                <th>ID терминала(ов)</th>
+                                <th>POS</th>
                                 <th>Дата создания</th>
                             </tr> </thead>
 

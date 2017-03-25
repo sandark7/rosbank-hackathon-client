@@ -20,13 +20,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="task" class="col-sm-3 control-label">Id терминалов </label>
+                                <label for="task" class="col-sm-3 control-label">POS</label>
                                 <div class="col-sm-8">
                                     <input type="number" name="terminal_id[]" id="terminal_id_1" class="form-control" required>
                                     <input type="number" name="terminal_id[]" id="terminal_id_2" class="form-control" >
                                     <input type="number" name="terminal_id[]" id="terminal_id_3" class="form-control" >
                                     <button type="submit" class="btn btn-success">
-                                        Добавить терминал
+                                        Добавить POS
                                     </button>
                                 </div>
                             </div>
