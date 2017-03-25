@@ -34,7 +34,7 @@ class OfferController extends Controller
     }
 
     /**
-     * API
+     * API for mobile monitoring
      */
     public function pushToClient($client_id)
     {
@@ -50,6 +50,16 @@ class OfferController extends Controller
         return response()->json($offer);
     }
 
+    /**
+     * API for web
+     */
+    public function sendOffer($offer_id)
+    {
+        Offer::where('id', $offer_id)
+            ->update(['is_push' => 1]);
+
+        return response()->json(['result' => 'success']);
+    }
 
     /**
      * Show the form for creating a new resource.
