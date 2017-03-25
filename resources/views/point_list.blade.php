@@ -24,7 +24,7 @@
                                 <tr>
                                     <td><a href="{{ route('point_detail', ['id' => $point->id]) }}">{{ $point->address }}</a></td>
                                     <td>{{ $point->getTerminalIds() }}</td>
-                                    <td>{{ $point->created_at->format('jS F Y') }}</td>
+                                    <td>{{ $point->created_at->formatLocalized('%d %B %Y') }}</td>
                                 </tr>
                             @endforeach
                             </tbody> </table>
