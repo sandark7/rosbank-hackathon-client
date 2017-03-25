@@ -43,7 +43,14 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+                        @if (Auth::guest())
                         &nbsp;
+                        @else
+                        <li><a href="{{ route('offer_add') }}">Создать предложение</a></li>
+                        <li><a href="{{ route('offer_list') }}">Список предложений</a></li>
+                        <li><a href="{{ route('report') }}">Отчеты</a></li>
+                        <li><a href="{{ route('stat') }}">Статистика</a></li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
