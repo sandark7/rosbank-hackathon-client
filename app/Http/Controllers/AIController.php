@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Offer;
+use App\Point;
 use Illuminate\Support\Facades\Validator;
 
 class AIController extends Controller
@@ -17,6 +17,9 @@ class AIController extends Controller
      */
     public function indexByPoint($point_id)
     {
+
+        Point::where('id', $point_id)
+            ->update(['analytic_date' => date('Y-m-d H:i:s')]);
 
         $bigdata = [
             'Параметр 1' => rand(10, 200),
