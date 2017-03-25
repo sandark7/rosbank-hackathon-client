@@ -20,6 +20,13 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="task" class="col-sm-3 control-label">Название</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="name" id="task-name" class="form-control"required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label for="task" class="col-sm-3 control-label">Описание</label>
                             <div class="col-sm-8">
                                 <textarea class="form-control" rows="3" name="description" required></textarea>

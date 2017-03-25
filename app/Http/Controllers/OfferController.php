@@ -153,7 +153,19 @@ class OfferController extends Controller
      */
     public function addAction()
     {
-        return view('offer_add');
+        return view('offer_add' );
+
+        //return response()->json(['success', ['point_id' => $point_id, 'target_id' => $target_id] ]);
+    }
+
+    /**
+     * Cabinet add offer
+     */
+    public function addTargetAction($point_id, $target_id)
+    {
+        return view('offer_add' );
+
+        //return response()->json(['success', ['point_id' => $point_id, 'target_id' => $target_id] ]);
     }
 
     /**

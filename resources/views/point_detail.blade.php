@@ -57,7 +57,7 @@
                     <span class="finish-number__count">{{ $bigdata['potential'] }}</span>
                     <span class="finish-number__man">Чел.</span>
                   </div>
-                  <a href="#" class="btn btn-success">Создать кэшбэк</a>
+                  <a href="{{ route('offer_add_targer', ['point_id' => $point->id, 'target_id' => 1]) }}" class="btn btn-success">Создать кэшбэк</a>
                 </div>
               </div>
               <div class="panel panel-info">
@@ -69,7 +69,7 @@
                     <span class="finish-number__count">{{ $bigdata['sleep'] }}</span>
                     <span class="finish-number__man">Чел.</span>
                   </div>
-                  <a href="#" class="btn btn-info">Создать кэшбэк</a>
+                  <a href="{{ route('offer_add_targer', ['point_id' => $point->id, 'target_id' => 2]) }}" class="btn btn-info">Создать кэшбэк</a>
                 </div>
               </div>
               <div class="panel panel-warning">
@@ -81,7 +81,7 @@
                     <span class="finish-number__count">{{ $bigdata['first'] }}</span>
                     <span class="finish-number__man">Чел.</span>
                   </div>
-                  <a href="#" class="btn btn-warning">Создать кэшбэк</a>
+                  <a href="{{ route('offer_add_targer', ['point_id' => $point->id, 'target_id' => 3]) }}" class="btn btn-warning">Создать кэшбэк</a>
                 </div>
               </div>
             </div>
