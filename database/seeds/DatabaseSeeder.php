@@ -68,8 +68,6 @@ class UsersTableSeeder extends Seeder {
 
         }
 
-
-
         Offer::create([
             'name' => 'Акция Starbucks',
             'company_name' => 'Starbucks',
@@ -91,6 +89,12 @@ class UsersTableSeeder extends Seeder {
             'address' => 'г.Москва, Кутузовский проспект, дом 15',
             'user_id' => 1,
             'terminal_id' => 2234567890,
+        ]);
+
+        Point::create([
+            'address' => 'г.Москва, Кутузовский проспект, дом 15',
+            'user_id' => 2,
+            'terminal_id' => 2234563890,
         ]);
     }
 
