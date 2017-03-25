@@ -26,7 +26,7 @@
                         <td>{{ $offer->name }}</td>
                         <td>{{ $offer->description }}</td>
                         <td>{{ $offer->cashback }}%</td>
-                        <td>{{ $offer->created_at->format('jS F Y') }}</td>
+                        <td>{{ $offer->created_at->formatLocalized('%d %B %Y') }}</td>
                     </tr>
                     @endforeach
                     </tbody> </table>

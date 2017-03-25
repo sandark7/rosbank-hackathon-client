@@ -1,5 +1,8 @@
 <?php
 
+setlocale(LC_TIME, 'Russian');
+setlocale(LC_ALL, 'ru_RU.UTF-8');
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
