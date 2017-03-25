@@ -31,3 +31,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/logout', 'Auth\LoginController@logout');
+
+Route::get('/home/stat', 'CabinetController@stat');
+Route::get('/home/offer/add/', 'OfferController@addAction');
+Route::get('/home/offer/list/', 'OfferController@listAction');
+Route::get('/home/report', 'CabinetController@report');

@@ -8,6 +8,7 @@ use App\Offer;
 class OfferController extends Controller
 {
     /**
+     * API
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -19,6 +20,11 @@ class OfferController extends Controller
         return response()->json($offer);
     }
 
+    /**
+     * API
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function indexByClient()
     {
         $offer = Offer::all()->toArray();
@@ -98,8 +104,19 @@ class OfferController extends Controller
         //
     }
 
+    /**
+     * Cabinet list offers
+     */
     public function listAction()
     {
+        return view('offer_list');
+    }
 
+    /**
+     * Cabinet add offer
+     */
+    public function addAction()
+    {
+        return view('offer_add');
     }
 }
