@@ -202,7 +202,7 @@ class OfferController extends Controller
 
         $offer->save();
 
-        $request->session()->flash('alert-success', 'Ваше предложение успешно создано и отправлено!');
+        $request->session()->flash('alert-success', 'Предложение создано и отправлено получателям!');
 
         return redirect()->route('offer_list');
     }

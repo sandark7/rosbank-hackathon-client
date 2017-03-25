@@ -60,10 +60,12 @@ class PointController extends Controller
         $point = new Point();
         $point->address = $request->address;
         $point->user_id = Auth::id();
-        $point->terminal_id = implode($request->terminal_id, ', ');
+        $point->terminal_id = implode( array_filter($request->terminal_id) , ', ');
         $point->bigdata = json_encode( Point::getBigData() );
 
         $point->save();
+
+        $request->session()->flash('alert-success', 'Торговая точка успешно созданa!');
 
         return redirect()->route('point_list');
     }

@@ -6,6 +6,19 @@
       <div class="col-md-12 points">
         <img src="{{ $company_logo }}" alt="">
         <h1 class="points__name">{{ $company_name }}</h1>
+
+        <div class="flash-message" id="alert">
+          @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @if(Session::has('alert-' . $msg))
+              <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}
+                <a href="#"
+                   onclick="javascript:document.getElementById('alert').style.display='none'; return false"
+                   class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              </p>
+            @endif
+          @endforeach
+        </div>
+
         <div class="points-list">
           @foreach ($points as $point)
             <a href="{{ route('point_detail', ['id' => $point->id]) }}" class="panel panel-info">
