@@ -35,8 +35,12 @@ class OfferController extends Controller
     /**
      * API
      */
-    public function pushToClient()
+    public function pushToClient($client_id)
     {
+
+        if ($client_id != 123) {
+            return response()->json([]);
+        }
 
         $offer = Offer::where('is_push', 1)
             ->take(1)
