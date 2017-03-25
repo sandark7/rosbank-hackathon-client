@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Offer;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class OfferController extends Controller
 {
@@ -139,7 +140,7 @@ class OfferController extends Controller
     {
         //$offers = Offer::all();
 
-        $offers = Offer::where('user_id', 1)
+        $offers = Offer::where('user_id', Auth::id() )
             ->orderBy('id', 'desc')
             ->take(100)
             ->get();
@@ -172,15 +173,13 @@ class OfferController extends Controller
 
         $offer = new Offer();
         $offer->name = $request->name;
-        $offer->user_id = 1;
-        $offer->logo = $offer->getDefaultLogo();
+        $offer->user_id = Auth::id();
+        $offer->logo = Offer::getDefaultLogo();
         $offer->description = $request->description;
         $offer->cashback = $request->cashback;
         $offer->is_push = 0;
         $offer->company_name = Offer::getDefaultName();
         $offer->save();
-
-        //return redirect('/home/offer/list/');
 
         return redirect()->route('offer_list');
     }

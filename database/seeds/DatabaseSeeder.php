@@ -29,8 +29,17 @@ class UsersTableSeeder extends Seeder {
             'email' => 'partner@gmail.com',
             'password' => bcrypt('secret'),
             'phone' => '123-123-1',
-            'company_name' => 'Моя кофейня',
+            'company_name' => 'Смузишная №1',
+            'company_logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/logo.png',
+        ]);
 
+        DB::table('users')->insert([
+            'name' => 'Иванова Светлана',
+            'email' => 'partner2@gmail.com',
+            'password' => bcrypt('secret'),
+            'phone' => '123-123-1',
+            'company_name' => 'Starbucks',
+            'company_logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/starbucks.png',
         ]);
 
         Offer::create([

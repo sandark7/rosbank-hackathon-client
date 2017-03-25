@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('company_name')->nullable();
             $table->string('company_type')->nullable();
             $table->string('company_scope')->nullable();
+            $table->string('company_logo')->nullable();
             $table->text('text')->nullable();
             $table->string('region')->nullable();
             $table->string('office')->nullable();
