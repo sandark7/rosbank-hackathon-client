@@ -29,7 +29,7 @@ class CabinetController extends Controller
 
     public function report()
     {
-        $points = Point::where('user_id', 1)
+        $points = Point::where('user_id', Auth::id())
             ->orderBy('id', 'desc')
             ->take(100)
             ->get();
