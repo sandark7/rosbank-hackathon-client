@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <label for="task" class="col-sm-3 control-label">Кешбек, %</label>
                             <div class="col-sm-6">
-                                <input type="text" name="cashback" id="task-name" class="form-control" required>
+                                <input type="number" name="cashback" id="task-name" class="form-control" required>
                             </div>
                         </div>
 
