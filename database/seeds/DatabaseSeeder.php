@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 use App\Offer;
+use App\Point;
 
 class DatabaseSeeder extends Seeder
 {
@@ -60,6 +61,18 @@ class UsersTableSeeder extends Seeder {
             'is_push' => 0,
             'push_text' => '',
             'cashback' => 10,
+        ]);
+
+        Point::create([
+            'address' => 'г.Москва, Маши Порываевой улица, дом 34',
+            'user_id' => 1,
+            'terminal_id' => 1234567890,
+        ]);
+
+        Point::create([
+            'address' => 'г.Москва, Кутузовский проспект, дом 15',
+            'user_id' => 1,
+            'terminal_id' => 2234567890,
         ]);
     }
 
