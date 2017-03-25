@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder {
         //DB::table('users')->delete();
 
         DB::table('users')->insert([
-            'name' => str_random(10),
+            'name' => 'Иванов Иван',
             'email' => 'partner@gmail.com',
             'password' => bcrypt('secret'),
             'phone' => '123-123-1',
