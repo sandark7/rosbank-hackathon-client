@@ -36,7 +36,10 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        <!-- {{ config('app.name', 'Laravel') }} -->
+                        <svg class="logo">
+                            <use xlink:href="#icon-logo"></use>
+                        </svg>
                     </a>
                 </div>
 
