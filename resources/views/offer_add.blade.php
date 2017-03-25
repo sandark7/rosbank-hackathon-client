@@ -11,18 +11,27 @@
                         Добавление предложения
                     </div>
 
-                    <!-- Отображение ошибок проверки ввода -->
-                    @include('common.errors')
-
-                    <!-- Форма новой задачи -->
                     <form action="{{ route('offer_add') }}" method="POST" class="form-horizontal">
                     {{ csrf_field() }}
 
                         <div class="form-group">
-                            <label for="task" class="col-sm-3 control-label">Предложение</label>
-
+                            <label for="task" class="col-sm-3 control-label">Название</label>
                             <div class="col-sm-6">
-                                <input type="text" name="name" id="task-name" class="form-control">
+                                <input type="text" name="name" id="task-name" class="form-control"required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="task" class="col-sm-3 control-label">Описание</label>
+                            <div class="col-sm-6">
+                                <textarea name="description" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="task" class="col-sm-3 control-label">Кешбек, %</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="cashback" id="task-name" class="form-control" required>
                             </div>
                         </div>
 

@@ -15,4 +15,9 @@ class Offer extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getDefaultLogo()
+    {
+        return 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/logo.png';
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Offer;
+use Illuminate\Support\Facades\Validator;
 
 class OfferController extends Controller
 {
@@ -144,5 +145,32 @@ class OfferController extends Controller
         return view('offer_add');
     }
 
+    /**
+     * Cabinet add offer
+     */
+    public function makeAction(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/')
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        $offer = new Offer();
+        $offer->name = $request->name;
+        $offer->user_id = 1;
+        $offer->logo = $offer->getDefaultLogo();
+        $offer->description = $request->description;
+        $offer->cashback = $request->cashback;
+        $offer->save();
+
+        //return redirect('/home/offer/list/');
+
+        return redirect()->route('offer_list');
+    }
 
 }
