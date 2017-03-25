@@ -27,14 +27,16 @@
                             <div class="form-group">
                                 <label for="task" class="col-sm-3 control-label">Дата с</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="date_from" id="task-name" class="form-control" required placeholder="гггг-мм-дд">
+                                    <input type="text" name="date_from" id="task-name" class="form-control" required
+                                           placeholder="гггг-мм-дд" value="@php print date('Y-m-d'); @endphp">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="task" class="col-sm-3 control-label">Дата до</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="date_to" id="task-name" class="form-control" required placeholder="гггг-мм-дд">
+                                    <input type="text" name="date_to" id="task-name" class="form-control" required
+                                           placeholder="гггг-мм-дд" value="@php print date('Y-m-d', strtotime('+1 month')); @endphp">
                                 </div>
                             </div>
 
@@ -65,7 +67,8 @@
                             <div class="form-group">
                                 <label for="task" class="col-sm-3 control-label">Cashback, %</label>
                                 <div class="col-sm-8">
-                                    <input type="text" max="99" maxlength="2" name="cashback" id="task-name" class="form-control" required>
+                                    <input type="text" max="99" maxlength="2" name="cashback" id="task-name"
+                                           class="form-control" required>
                                 </div>
                             </div>
 
