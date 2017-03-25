@@ -11,6 +11,14 @@
                         Список предложений
                     </div>
 
+                    @foreach ($offers as $offer)
+                        <p>Название {{ $offer->name }}</p>
+                        <p>Описание {{ $offer->description }}</p>
+                        <p>Кешбек {{ $offer->cashback }}</p>
+                        <p><img src="{{ $offer->logo }}" ></p>
+                        <p>Дата создания {{ $offer->created_at }}</p>
+                    @endforeach
+
                 </div>
             </div>
         </div>

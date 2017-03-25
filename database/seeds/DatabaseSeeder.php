@@ -24,16 +24,16 @@ class UsersTableSeeder extends Seeder {
         //DB::table('users')->delete();
 
         Offer::create([
-            'name' => 'Предложение дня',
-            'logo' => 'logo.jpg',
+            'name' => 'Кофе Хауз',
+            'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/cofehaus.png',
             'description' => 'Получи кешбек при покупки второй чашки кофе',
             'user_id' => 1,
             'cashback' => 10,
         ]);
 
         Offer::create([
-            'name' => 'Предложение второго дня',
-            'logo' => 'logo.jpg',
+            'name' => 'Starbucks',
+            'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/starbucks.png',
             'description' => 'Получи кешбек при покупки второй чашки кофе',
             'user_id' => 1,
             'cashback' => 10,

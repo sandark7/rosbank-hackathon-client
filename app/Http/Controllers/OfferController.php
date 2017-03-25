@@ -109,7 +109,8 @@ class OfferController extends Controller
      */
     public function listAction()
     {
-        return view('offer_list');
+        $offers = Offer::all();
+        return view('offer_list', ['offers' => $offers] );
     }
 
     /**
