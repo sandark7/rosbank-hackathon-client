@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/offer', function () {
+
+    $offers = App\Offer::where('user_id', 1)
+        ->orderBy('name', 'desc')
+        ->take(10)
+        ->get();
+
+    //return view('user.profile', ['offers' => $offers]);
+
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
