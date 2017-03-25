@@ -47,7 +47,7 @@ class UsersTableSeeder extends Seeder {
             'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/cofehaus.png',
             'description' => 'Получи кешбек при покупки первой чашки кофе',
             'user_id' => 1,
-            'is_push' => 0,
+            'is_push' => 1,
             'push_text' => 'Спецпредложение от Кофе Хауз',
             'cashback' => 10,
         ]);
