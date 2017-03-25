@@ -27,7 +27,11 @@ class PointController extends Controller
             ->take(100)
             ->get();
 
-        return view('point_list', ['points' => $points] );
+        return view('point_list', [
+            'points' => $points,
+            'company_name' => Offer::getDefaultName(),
+            'company_logo' => Offer::getDefaultLogo(),
+        ] );
     }
 
     /**
