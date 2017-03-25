@@ -1,0 +1,58 @@
+.modal
+  text-align center
+  font-family 'HelveticaNeue', sans-serif
+  color #000
+
+  &-dialog
+    position absolute
+    left 50%
+    top 50%
+    transform translate(-50%, -50%) !important
+
+  h4
+    font-size 36px
+
+  .btn
+    font-size 18px
+
+  &-header,
+  &-footer
+    border none
+
+  &-body
+    display inline-block
+    width 432px
+    height 200px
+
+.step
+  text-align left
+
+  .glyphicon-ok
+    display none
+    width 32px
+    font-size 24px
+
+  &__text
+    margin-left 10px
+    font-size 24px
+
+  &__count
+    display none
+    font-size 24px
+    margin-left 5px
+
+  &.is-done
+    color #58b957
+
+    .glyphicon-ok
+      display inline-block
+
+    .spinner
+      display none
+
+    .step__count
+      display inline-block
+
+
+
+
