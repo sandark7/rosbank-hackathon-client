@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Point;
 
 class CabinetController extends Controller
 {
@@ -28,6 +29,11 @@ class CabinetController extends Controller
 
     public function report()
     {
-        return view('report');
+        $points = Point::where('user_id', 1)
+            ->orderBy('id', 'desc')
+            ->take(100)
+            ->get();
+
+        return view('report', ['points' => $points]);
     }
 }

@@ -21,4 +21,15 @@ class Point extends Model
     }
 
 
+    public function getOffersNum()
+    {
+        $num = rand(31, 54) + $this->id;
+        return $num;
+    }
+
+    public function getOffersMoney()
+    {
+        $num = rand(31, 54)* 10 * $this->id;
+        return $num;
+    }
 }
