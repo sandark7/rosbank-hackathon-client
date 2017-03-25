@@ -83,18 +83,21 @@ class UsersTableSeeder extends Seeder {
             'address' => 'г.Москва, Маши Порываевой улица, дом 34',
             'user_id' => 1,
             'terminal_id' => 1234567890,
+            'bigdata' => json_encode(Point::getBigData())
         ]);
 
         Point::create([
             'address' => 'г.Москва, Кутузовский проспект, дом 15',
             'user_id' => 1,
             'terminal_id' => 2234567890,
+            'bigdata' => json_encode(Point::getBigData())
         ]);
 
         Point::create([
             'address' => 'г.Москва, Кутузовский проспект, дом 15',
             'user_id' => 2,
             'terminal_id' => 2234563890,
+            'bigdata' => json_encode(Point::getBigData())
         ]);
     }
 

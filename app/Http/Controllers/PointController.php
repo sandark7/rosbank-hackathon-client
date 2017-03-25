@@ -57,6 +57,8 @@ class PointController extends Controller
         $point->address = $request->address;
         $point->user_id = Auth::id();
         $point->terminal_id = implode($request->terminal_id, ', ');
+        $point->bigdata = json_encode( Point::getBigData() );
+
         $point->save();
 
         return redirect()->route('point_list');
@@ -70,26 +72,7 @@ class PointController extends Controller
             'step_2' => rand(21, 39)
         ];
 
-        $bigdata = [
-
-            'average_check' => [
-                'my' => rand(451, 501),
-                'others' => rand(652, 702)
-            ],
-            'transactions' => [
-                'my' => rand(100, 149) / 100,
-                'others' => rand(151, 200) / 100
-            ],
-            'spending' => [
-                'my' => rand(351, 451) ,
-                'others' => rand(971, 1001)
-            ],
-
-            'potential' => rand(201, 230),
-            'sleep' => rand(142, 182),
-            'first' => rand(349, 451),
-
-        ];
+        $bigdata = json_decode($point->bigdata, true);
 
         return view('point_detail', [
             'point' => $point,

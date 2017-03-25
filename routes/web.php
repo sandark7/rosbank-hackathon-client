@@ -34,7 +34,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home/stat', 'CabinetController@stat')->name('stat');
 
-Route::get('/home/offer/add/',[
+Route::get('/home/offer/add/{point_id}/{section_id}', [
     'middleware' => 'auth',
     'uses' => 'OfferController@addAction'
 ])->name('offer_add');

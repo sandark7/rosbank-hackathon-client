@@ -19,6 +19,7 @@ class CreatePointsTable extends Migration
             $table->string('terminal_id');
             $table->date('analytic_date')->nullable();
             $table->integer('user_id')->index();
+            $table->text('bigdata')->nullable();
             $table->timestamps();
         });
     }
