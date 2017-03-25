@@ -56,7 +56,12 @@ class OfferController extends Controller
      */
     public function show($id)
     {
-        //
+        $offer = Offer::where('id', $id)
+        ->orderBy('name', 'desc')
+        ->take(1)
+        ->get();
+
+        return response()->json($offer);
     }
 
     /**
