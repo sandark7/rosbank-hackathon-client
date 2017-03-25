@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Point;
+use App\Offer;
 use Illuminate\Support\Facades\Validator;
 
 class PointController extends Controller
@@ -67,6 +68,10 @@ class PointController extends Controller
             'step_2' => rand(21, 39)
         ];
 
-        return view('point_detail', ['point' => $point, 'steps' => $steps]);
+        return view('point_detail', [
+            'point' => $point,
+            'steps' => $steps,
+            'company_name' => Offer::getDefaultName()
+        ]);
     }
 }
