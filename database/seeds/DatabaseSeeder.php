@@ -29,7 +29,6 @@ class UsersTableSeeder extends Seeder {
             'password' => bcrypt('secret'),
             'phone' => '123-123-1',
             'company_name' => 'Моя кофейня',
-            'company_name' => 'Моя кофейня',
 
         ]);
 
