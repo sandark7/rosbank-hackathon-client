@@ -82,6 +82,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('assets/vendors.js') }}"></script>
     <script src="{{ asset('assets/app.js') }}"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
+                    <div class="panel-heading">Регистрация</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
@@ -27,7 +27,7 @@
 
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">E-Mail</label>
+                                <label for="email" class="col-md-4 control-label">Электронная почта</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control" name="email"
@@ -42,7 +42,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                                <label for="phone" class="col-md-4 control-label">Phone</label>
+                                <label for="phone" class="col-md-4 control-label">Телефон</label>
 
                                 <div class="col-md-6">
                                     <input id="phone" type="text" class="form-control" name="phone"
@@ -57,10 +57,10 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="col-md-4 control-label">Password</label>
+                                <label for="password" class="col-md-4 control-label">Пароль</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password" required>
+                                    <input id="password" type="password" class="form-control" name="password" required minlength="6">
 
                                     @if ($errors->has('password'))
                                         <span class="help-block">
@@ -71,20 +71,20 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                                <label for="password-confirm" class="col-md-4 control-label">Подтверждение пароля</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
-                                           name="password_confirmation" required>
+                                           name="password_confirmation" required minlength="6">
                                 </div>
                             </div>
 
 
                             <div class="form-group{{ $errors->has('company_type') ? ' has-error' : '' }}">
-                                <label for="company_type" class="col-md-4 control-label">Тип</label>
+                                <label for="company_type" class="col-md-4 control-label">Тип компании</label>
 
                                 <div class="col-md-6">
-                                    <select name="company_type">
+                                    <select class="selectpicker show-tick form-control" title="Выберите из списка" name="company_type" required>
                                         <option>ООО</option>
                                         <option>ОАО</option>
                                         <option>ЗАО</option>
@@ -120,8 +120,7 @@
                                 <label for="company_scope" class="col-md-4 control-label">Вид основной деятельности</label>
 
                                 <div class="col-md-6">
-                                    <select name="company_scope">
-                                        <option value="">Выберите из списка</option>
+                                    <select class="selectpicker show-tick form-control" title="Выберите из списка" name="company_scope" required>
                                         <option value="3677">Транспорт</option>
                                         <option value="3678">Финансы и страхование</option>
                                         <option value="3834">Производство</option>
@@ -148,7 +147,7 @@
                                 <label for="text" class="col-md-4 control-label">Дополнительная информация</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="text" name="text">{{ old('text') }}</textarea>
+                                    <textarea class="form-control" rows="3" id="text" name="text">{{ old('text') }}</textarea>
 
                                     @if ($errors->has('text'))
                                         <span class="help-block">
@@ -162,7 +161,7 @@
                                 <label for="region" class="col-md-4 control-label">Регион</label>
 
                                 <div class="col-md-6">
-                                    <select name="region">
+                                    <select class="selectpicker show-tick form-control" name="region" required>
                                         <option value="4387" fo="3598">Алтайский край</option>
                                         <option value="4378" fo="3597">Амурская область</option>
                                         <option value="4369" fo="3596">Архангельская область</option>
@@ -206,9 +205,7 @@
                                 <label for="name" class="col-md-4 control-label">Офис</label>
 
                                 <div class="col-md-6">
-                                    <select name="office">
-
-                                        <option value="">Выберите из списка</option>
+                                    <select class="selectpicker show-tick form-control" title="Выберите из списка" name="office" required>
                                         <option value="Алексеевский" id="8708" title="2019" data-lng="37.639333084653"
                                                 data-lat="55.814355697765" data-metro="метро Алексеевская, ВДНХ">
                                             "Алексеевский" (Москва,
@@ -249,11 +246,13 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('accept') ? ' has-error' : '' }}">
-                                <label for="accept" class="col-md-4 control-label">я согласен с обработкой моих персональных данных </label>
-
-                                <div class="col-md-6">
-                                    <input id="company_name" type="checkbox" class="form-control" name="accept"
-                                           value="1" required autofocus>
+                                <div class="col-sm-offset-4 col-md-6">
+                                    <div class="checkbox">
+                                        <label class="fz14">
+                                            <input id="company_name" type="checkbox" name="accept" value="1" required autofocus>
+                                                Я согласен с обработкой моих персональных данных
+                                        </label>
+                                    </div>
 
                                     @if ($errors->has('accept'))
                                         <span class="help-block">
@@ -266,7 +265,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Register
+                                        Зарегистрироваться
                                     </button>
                                 </div>
                             </div>
