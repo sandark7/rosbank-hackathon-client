@@ -23,4 +23,13 @@ Route::get('/test',function(){
     ]);
 });
 
+Route::get('/offers/{client_id}/',function(){
+    return response()->json([
+        'test' => 'success'
+    ]);
+});
+
+Route::get('/offers/{client_id}/', 'OfferController@indexByClient');
+
+
 Route::resource('offer', 'OfferController');

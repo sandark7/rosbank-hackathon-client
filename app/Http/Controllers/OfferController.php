@@ -19,6 +19,14 @@ class OfferController extends Controller
         return response()->json($offer);
     }
 
+    public function indexByClient()
+    {
+        $offer = Offer::all()->toArray();
+
+        return response()->json($offer);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
