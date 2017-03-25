@@ -191,7 +191,7 @@ class OfferController extends Controller
         $offer->logo = Offer::getDefaultLogo();
         $offer->description = $request->description;
         $offer->cashback = $request->cashback;
-        $offer->is_push = 0;
+        $offer->is_push = 1;
         $offer->company_name = Offer::getDefaultName();
 
         $offer->point_id = $request->point_id;
@@ -201,6 +201,8 @@ class OfferController extends Controller
         $offer->recipient_num = $request->recipient_num;
 
         $offer->save();
+
+        $request->session()->flash('alert-success', 'Ваше предложение успешно создано и отправлено!');
 
         return redirect()->route('offer_list');
     }

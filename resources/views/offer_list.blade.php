@@ -7,7 +7,18 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Список предложений</h4>
-                        <a href="{{ route('offer_add') }}" class="btn btn-success pull-right">Создать</a>
+                    </div>
+
+                    <div class="flash-message" id="alert">
+                        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                            @if(Session::has('alert-' . $msg))
+                                <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}
+                                    <a href="#"
+                                       onclick="javascript:document.getElementById('alert').style.display='none'; return false"
+                                       class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                </p>
+                            @endif
+                        @endforeach
                     </div>
 
                     <div class="panel-body">
