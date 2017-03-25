@@ -1,36 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4>Список торговых точек</h4>
-                        <a href="{{ route('point_add') }}" class="btn btn-success pull-right">Создать</a>
-                    </div>
-
-                    <div class="panel-body">
-                        <table class="table">
-                            <thead><tr>
-                                <th>Адрес</th>
-                                <th>POS</th>
-                                <th>Дата создания</th>
-                            </tr> </thead>
-
-                            <tbody>
-
-                            @foreach ($points as $point)
-                                <tr>
-                                    <td><a href="{{ route('point_detail', ['id' => $point->id]) }}">{{ $point->address }}</a></td>
-                                    <td>{{ $point->getTerminalIds() }}</td>
-                                    <td>{{ $point->created_at->formatLocalized('%d %B %Y') }}</td>
-                                </tr>
-                            @endforeach
-                            </tbody> </table>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 points">
+        <img src="{{ $company_logo }}" alt="">
+        <h1 class="points__name">{{ $company_name }}</h1>
+        <div class="points-list">
+          @foreach ($points as $point)
+            <a href="{{ route('point_detail', ['id' => $point->id]) }}" class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Торговая точка</h3>
+              </div>
+              <div class="panel-body">
+                <span class="points-list__address">{{ $point->address }}</span>
+                <span class="points-list__pos"><b>POS: </b>{{ $point->getTerminalIds() }}</span>
+              </div>
+            </a>
+            @endforeach
+            <a href="{{ route('point_add') }}" class="panel panel-info">
+              <div class="panel-body">
+                <span class="glyphicon glyphicon-plus"></span>
+                <span class="points-list__new">Добавить точку</span>
+              </div>
+            </a>
         </div>
+      </div>
     </div>
+  </div>
 @endsection
