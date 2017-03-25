@@ -47,4 +47,8 @@ if ($('#popup').length) {
       clearTimeout(timeouts[i]);
     }
   });
+
+  $('#closePopup').click(function() {
+    $('#app').find('.start').addClass('is-hidden').siblings('.finish').removeClass('is-hidden');
+  });
 }

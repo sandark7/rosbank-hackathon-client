@@ -57,10 +57,9 @@
                         @if (Auth::guest())
                         &nbsp;
                         @else
-                        <li><a href="{{ route('point_list') }}">Точки</a></li>
+                        <li><a href="{{ route('point_list') }}">Торговые точки</a></li>
                         <li><a href="{{ route('offer_list') }}">Предложения</a></li>
                         <li><a href="{{ route('report') }}">Отчеты</a></li>
-                        <li><a href="{{ route('stat') }}">Статистика</a></li>
                         @endif
                     </ul>
 
