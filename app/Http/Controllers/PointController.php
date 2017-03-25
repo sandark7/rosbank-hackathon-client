@@ -62,7 +62,11 @@ class PointController extends Controller
     public function detailAction($id)
     {
         $point = Point::where('id', $id)->first();
+        $steps = [
+            'step_1' => rand(101,199),
+            'step_2' => rand(21, 39)
+        ];
 
-        return view('point_detail', ['point' => $point]);
+        return view('point_detail', ['point' => $point, 'steps' => $steps]);
     }
 }
