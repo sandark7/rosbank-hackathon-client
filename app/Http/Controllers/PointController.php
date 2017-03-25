@@ -38,7 +38,7 @@ class PointController extends Controller
     public function makeAction(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
+            'address' => 'required|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -50,7 +50,7 @@ class PointController extends Controller
         $point = new Point();
         $point->address = $request->address;
         $point->user_id = 1;
-        $point->terminal_id = $request->terminal_id;
+        $point->terminal_id = implode($request->terminal_id, ', ');
         $point->save();
 
         return redirect()->route('point_list');
