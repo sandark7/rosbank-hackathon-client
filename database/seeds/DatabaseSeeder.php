@@ -23,6 +23,16 @@ class UsersTableSeeder extends Seeder {
     {
         //DB::table('users')->delete();
 
+        DB::table('users')->insert([
+            'name' => str_random(10),
+            'email' => 'partner@gmail.com',
+            'password' => bcrypt('secret'),
+            'phone' => '123-123-1',
+            'company_name' => 'Моя кофейня',
+            'company_name' => 'Моя кофейня',
+
+        ]);
+
         Offer::create([
             'name' => 'Кофе Хауз',
             'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/cofehaus.png',
