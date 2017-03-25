@@ -32,6 +32,19 @@ class OfferController extends Controller
         return response()->json($offer);
     }
 
+    /**
+     * API
+     */
+    public function pushToClient()
+    {
+
+        $offer = Offer::where('is_push', 1)
+            ->take(1)
+            ->get()->toArray();
+
+        return response()->json($offer);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -109,7 +122,13 @@ class OfferController extends Controller
      */
     public function listAction()
     {
-        $offers = Offer::all();
+        //$offers = Offer::all();
+
+        $offers = Offer::where('user_id', 1)
+            ->orderBy('id', 'desc')
+            ->take(100)
+            ->get();
+
         return view('offer_list', ['offers' => $offers] );
     }
 
@@ -120,4 +139,6 @@ class OfferController extends Controller
     {
         return view('offer_add');
     }
+
+
 }

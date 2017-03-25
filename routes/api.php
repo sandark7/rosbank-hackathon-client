@@ -26,5 +26,7 @@ Route::get('/test',function(){
 
 Route::get('/offers/{client_id}/', 'OfferController@indexByClient');
 
+Route::get('/push/{client_id}/', 'OfferController@pushToClient');
+
 
 Route::resource('offer', 'OfferController');

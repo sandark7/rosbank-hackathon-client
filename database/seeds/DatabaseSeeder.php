@@ -37,6 +37,18 @@ class UsersTableSeeder extends Seeder {
             'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/cofehaus.png',
             'description' => 'Получи кешбек при покупки второй чашки кофе',
             'user_id' => 1,
+            'is_push' => 0,
+            'push_text' => 'Спецпредложение от Кофе Хауз',
+            'cashback' => 10,
+        ]);
+
+        Offer::create([
+            'name' => 'Кофе Хауз',
+            'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/cofehaus.png',
+            'description' => 'Получи кешбек при покупки первой чашки кофе',
+            'user_id' => 1,
+            'is_push' => 0,
+            'push_text' => 'Спецпредложение от Кофе Хауз',
             'cashback' => 10,
         ]);
 
@@ -44,7 +56,9 @@ class UsersTableSeeder extends Seeder {
             'name' => 'Starbucks',
             'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/starbucks.png',
             'description' => 'Получи кешбек при покупки второй чашки кофе',
-            'user_id' => 1,
+            'user_id' => 2,
+            'is_push' => 0,
+            'push_text' => '',
             'cashback' => 10,
         ]);
     }

@@ -19,6 +19,8 @@ class CreateOffersTable extends Migration
             $table->string('logo');
             $table->text('description');
             $table->integer('user_id')->index();
+            $table->integer('is_push')->nullable();
+            $table->string('push_text')->nullable();
             $table->string('cashback');
             $table->timestamps();
         });
