@@ -52,3 +52,14 @@ if ($('#popup').length) {
     $('#app').find('.start').addClass('is-hidden').siblings('.finish').removeClass('is-hidden');
   });
 }
+let count = 1;
+
+$('#posAdd').click(function(e) {
+  $(e.currentTarget).closest('.points-pos').append('<input type="number" name="terminal_id[]" id="terminal_id_' + ++count + '" class="form-control" max="9999999" required><span id="posRemove' + count + '" class="glyphicon glyphicon-trash"></span>');
+
+  $('#posRemove' + count).click(function(ev) {
+    let $target = $(ev.currentTarget);
+    $target.prev().remove();
+    $target.remove();
+  });
+});
