@@ -34,9 +34,20 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home/stat', 'CabinetController@stat')->name('stat');
 
-Route::get('/home/offer/add/', 'OfferController@addAction')->name('offer_add');
-Route::post('/home/offer/add/', 'OfferController@makeAction')->name('offer_add_post');
-Route::get('/home/offer/list/', 'OfferController@listAction')->name('offer_list');
+Route::get('/home/offer/add/',[
+    'middleware' => 'auth',
+    'uses' => 'OfferController@addAction'
+])->name('offer_add');
+
+Route::post('/home/offer/add/', [
+    'middleware' => 'auth',
+    'uses' => 'OfferController@makeAction'
+])->name('offer_add_post');
+
+Route::get('/home/offer/list/', [
+    'middleware' => 'auth',
+    'uses' => 'OfferController@listAction'
+])->name('offer_list');
 
 Route::get('/home/point/add/', 'PointController@addAction')->name('point_add');
 Route::post('/home/point/add/', 'PointController@makeAction')->name('point_add_post');
