@@ -57,9 +57,9 @@
                         @if (Auth::guest())
                         &nbsp;
                         @else
-                        <li {{ Route::currentRouteNamed('point_list') ? 'class="active"' : '' }} ><a href="{{ route('point_list') }}">Торговые точки</a></li>
-                        <li {{ Route::currentRouteNamed('offer_list') ? 'class="active"' : '' }}><a href="{{ route('offer_list') }}">Предложения</a></li>
-                        <li {{ Route::currentRouteNamed('report') ? 'class="active"' : '' }}><a href="{{ route('report') }}">Отчеты</a></li>
+                        <li {{ Route::currentRouteNamed('point_list') ? ' class=active ' : '' }} ><a href="{{ route('point_list') }}">Торговые точки</a></li>
+                        <li {{ Route::currentRouteNamed('offer_list') ? ' class=active ' : '' }}><a href="{{ route('offer_list') }}">Предложения</a></li>
+                        <li {{ Route::currentRouteNamed('report') ? ' class=active ' : '' }}><a href="{{ route('report') }}">Отчеты</a></li>
                         @endif
                     </ul>
 
