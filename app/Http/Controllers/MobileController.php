@@ -57,7 +57,25 @@ class MobileController extends Controller
 
             $res_code = $response->getStatusCode() ;
 
-            Log::info('Send to token: ', ['response' => $res_code, 'token_id' => $token['token_id']]);
+            Log::info('Send to token: ', ['response' => $res_code, 'token_id' => $token['token_id'],
+
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                    'Authorization' => 'key=AIzaSyB0Twe2S6Q4Y50twxJ6z5kzYsaRhsme3Ek'
+                ],
+
+                'connect_timeout' => 3,
+
+                'json' => [
+                    'data' => [
+                        'offerId' => $offer->id,
+                        'title' => $offer->name,
+                        'message' => $offer->description
+                    ],
+                    'to' => $token['token_id']
+                ],
+
+            ]);
 
         }
 
