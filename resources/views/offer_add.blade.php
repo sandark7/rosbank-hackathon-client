@@ -9,8 +9,18 @@
 
                     <div class="panel-body">
                         <div class="offer-description">
-                            <b>Сегмент: «Потенциальные»</b>
-                            <span>Похожи на ваших клиентов по профилю и географии покупок, но у вас еще не покупали.</span>
+                            @if ($target_id == 1)
+                                <b>Сегмент: «Потенциальные»</b>
+                                <span>Похожи на ваших клиентов по профилю и географии покупок, но у вас еще не покупали.</span>
+                            @elseif ($target_id == 2)
+                                <b>Сегмент: «Уснувшие»</b>
+                                <span>Покупали более одного раза, но потом перестали покупать.</span>
+                            @elseif ($target_id == 3)
+                                <b>Сегмент: «Разовые»</b>
+                                <span>Покупали в точке только один раз.</span>
+                            @else
+
+                            @endif
                         </div>
 
                         <form action="{{ route('offer_add') }}" method="POST" class="form-horizontal">
