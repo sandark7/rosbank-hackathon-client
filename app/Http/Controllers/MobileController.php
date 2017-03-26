@@ -31,6 +31,8 @@ class MobileController extends Controller
 
         $tokens = Token::all()->toArray();
 
+        $res_code = 200;
+
         foreach ($tokens as $token) {
 
             $response = $client->request('POST', 'https://gcm-http.googleapis.com/gcm/send', [
