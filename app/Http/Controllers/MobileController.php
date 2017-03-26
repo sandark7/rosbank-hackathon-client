@@ -38,8 +38,8 @@ class MobileController extends Controller
             $response = $client->request('POST', 'https://gcm-http.googleapis.com/gcm/send', [
 
                 'headers' => [
-                    'content-type' => 'application/json',
-                    'Authorization' => 'key=AIzaSyChSFrin9SaYT4jo-1EJWT3Mza2rnIfNx8'
+                    'Content-Type' => 'application/json',
+                    'Authorization' => 'key=AIzaSyB0Twe2S6Q4Y50twxJ6z5kzYsaRhsme3Ek'
                 ],
 
                 'connect_timeout' => 3,
@@ -57,7 +57,7 @@ class MobileController extends Controller
 
             $res_code = $response->getStatusCode() ;
 
-            Log::info('Send to token: ', ['response' => $res_code, 'token_id' => $token]);
+            Log::info('Send to token: ', ['response' => $res_code, 'token_id' => $token['token_id']]);
 
         }
 
