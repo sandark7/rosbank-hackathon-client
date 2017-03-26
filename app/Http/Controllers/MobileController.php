@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Validator;
 class MobileController extends Controller
 {
 
-
     /**
      * API
      *
@@ -18,7 +17,7 @@ class MobileController extends Controller
     public function getTokenAction($token_id)
     {
 
-        Token::create([
+        Token::firstOrCreate([
             'token_id' => $token_id,
         ]);
 
