@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Offer;
 use App\Point;
+use App\Token;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
@@ -202,29 +203,9 @@ class OfferController extends Controller
 
         $offer->save();
 
-        $client = new \GuzzleHttp\Client();
+        $response_code = \App\Http\Controllers\MobileController::sendPush($offer);
 
-        $response = $client->request('POST', 'https://gcm-http.googleapis.com/gcm/send', [
-
-            'headers' => [
-                'content-type' => 'application/json',
-                'Authorization' => 'key=AIzaSyChSFrin9SaYT4jo-1EJWT3Mza2rnIfNx8'
-            ],
-
-            'connect_timeout' => 3,
-
-            'json' => [
-                'data' => [
-                    'offerId' => $offer->id,
-                    'title' => $offer->name,
-                    'message' => $offer->description
-                ],
-                'to' => 'dLgvtI6k4Ww:APA91bHrC1HjLl2FhizvpNdHzv4ehtIpGnfizR23wUr-zJpEqIAY95nmWFWgBg2kZFoqGv54ERKoyGwWu1YsQcJLU66N3u6sGriNc6n4BB4ic1K17RsY4raefBlkRgBrh5bJDKUQ97oF'
-            ],
-
-        ]);
-
-        if ($response->getStatusCode() == 200) {
+        if ( $response_code == 200) {
 
             $request->session()->flash('alert-success', 'Предложение создано и отправлено получателям!');
 
@@ -236,5 +217,6 @@ class OfferController extends Controller
 
         return redirect()->route('offer_list');
     }
+
 
 }

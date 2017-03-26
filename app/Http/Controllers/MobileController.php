@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Token;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 
 class MobileController extends Controller
 {
@@ -22,5 +23,42 @@ class MobileController extends Controller
         ]);
 
         return response()->json(['success']);
+    }
+
+    public static function sendPush($offer)
+    {
+        $client = new \GuzzleHttp\Client();
+
+        $tokens = Token::all()->toArray();
+
+        foreach ($tokens as $token) {
+
+            $response = $client->request('POST', 'https://gcm-http.googleapis.com/gcm/send', [
+
+                'headers' => [
+                    'content-type' => 'application/json',
+                    'Authorization' => 'key=AIzaSyChSFrin9SaYT4jo-1EJWT3Mza2rnIfNx8'
+                ],
+
+                'connect_timeout' => 3,
+
+                'json' => [
+                    'data' => [
+                        'offerId' => $offer->id,
+                        'title' => $offer->name,
+                        'message' => $offer->description
+                    ],
+                    'to' => $token['token_id']
+                ],
+
+            ]);
+
+            $res_code = $response->getStatusCode() ;
+
+            Log::info('Send to token: ', ['response' => $res_code, 'token_id' => $token]);
+
+        }
+
+        return $res_code;
     }
 }
