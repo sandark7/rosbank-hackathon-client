@@ -27,7 +27,7 @@
                             {{ csrf_field() }}
 
                             <div class="form-group">
-                                <label for="task" class="col-sm-3 control-label">Торговая точка</label>
+                                <label for="task" class="col-sm-3 control-label">Торговая точка:</label>
                                 <div class="col-sm-5">
                                     <input type="text" name="" disabled id="task-name" class="form-control"
                                            value="{{ $point->address }}">
@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="task" class="col-sm-3 control-label">Период действия</label>
+                                <label for="task" class="col-sm-3 control-label">Период действия:</label>
                                 <div class="col-sm-5">
                                     <div class="input-group date">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
@@ -56,41 +56,44 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="task" class="col-sm-3 control-label">Получатели</label>
-                                <div class="col-sm-4">
+                                <label for="task" class="col-sm-3 control-label">Получатели:</label>
+                                <div class="col-sm-2">
                                     <input type="number" max="{{ $point->getRecipientNum($target_id) }}"
                                            name="recipient_num" id="task-name" class="form-control"
                                            required value="{{ $point->getRecipientNum($target_id) }}">
+                                    <span class="offer__text">чел.</span>
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label for="task" class="col-sm-3 control-label">Кэшбэк:</label>
+                                <div class="col-sm-2">
+                                    <input type="text" max="99" maxlength="2" name="cashback" id="task-name"
+                                           class="form-control" required>
+                                    <span class="offer__text">%</span>
+                                </div>
+                            </div>
 
                             <div class="form-group">
-                                <label for="task" class="col-sm-3 control-label">Название</label>
+                                <label for="task" class="col-sm-3 control-label">Название:</label>
                                 <div class="col-sm-4">
                                     <input type="text" name="name" id="task-name" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="task" class="col-sm-3 control-label">Описание</label>
+                                <label for="task" class="col-sm-3 control-label">Описание и условия:</label>
                                 <div class="col-sm-4">
-                                    <textarea class="form-control" rows="3" name="description" required></textarea>
+                                    <textarea class="form-control" rows="4" name="description" required></textarea>
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="task" class="col-sm-3 control-label">Cashback, %</label>
-                                <div class="col-sm-4">
-                                    <input type="text" max="99" maxlength="2" name="cashback" id="task-name"
-                                           class="form-control" required>
-                                </div>
-                            </div>
+
 
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-4">
                                     <button type="submit" class="btn btn-success">
-                                        Добавить
+                                        Создать предложение
                                     </button>
                                 </div>
                             </div>
