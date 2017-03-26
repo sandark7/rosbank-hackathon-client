@@ -10,6 +10,8 @@ window.$ = window.jQuery = require('jquery');
 
 require('_nodemodules/bootstrap/dist/js/bootstrap.min.js');
 require('bootstrap-select');
+require('_nodemodules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');
+require('_nodemodules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js');
 require('_stylesheets/app');
 
 window.axios = require('axios');
@@ -62,4 +64,10 @@ $('#posAdd').click(function(e) {
     $target.prev().remove();
     $target.remove();
   });
+});
+
+$('.input-group.date').datepicker({
+  language: 'ru',
+  forceParse: false,
+  todayHighlight: true
 });
