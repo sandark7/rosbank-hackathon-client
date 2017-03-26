@@ -31,4 +31,6 @@ Route::get('/bigdata/{point_id}/', 'AIController@indexByPoint');
 
 Route::get('/offers/send/{offer_id}/', 'OfferController@sendOffer');
 
+Route::get('/registerDevice/{token_id}/', 'MobileController@getTokenAction');
+
 Route::resource('offer', 'OfferController');
