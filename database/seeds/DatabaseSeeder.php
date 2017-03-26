@@ -53,21 +53,6 @@ class UsersTableSeeder extends Seeder {
             'cashback' => 10,
         ]);
 
-        for($i=1 ; $i<=14; $i++) {
-
-            Offer::create([
-                'name' => 'Акция #' . $i . ' ' . Offer::getDefaultName(),
-                'company_name' => Offer::getDefaultName(),
-                'logo' => 'http://rsb-linuxvm-04.northeurope.cloudapp.azure.com/images/logo.png',
-                'description' => 'Получи кешбек при покупки первой чашки кофе',
-                'user_id' => 1,
-                'is_push' => 0,
-                'push_text' => 'Спецпредложение от #' . $i .  Offer::getDefaultName(),
-                'cashback' => 10 + $i,
-            ]);
-
-        }
-
         Offer::create([
             'name' => 'Акция Starbucks',
             'company_name' => 'Starbucks',
