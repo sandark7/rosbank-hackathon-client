@@ -29,18 +29,18 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="task" class="col-sm-3 control-label">Дата с</label>
-                                <div class="col-sm-4">
-                                    <input type="text" name="date_from" id="task-name" class="form-control" required
-                                           placeholder="гггг-мм-дд" value="@php print date('Y-m-d'); @endphp">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="task" class="col-sm-3 control-label">Дата до</label>
-                                <div class="col-sm-4">
-                                    <input type="text" name="date_to" id="task-name" class="form-control" required
-                                           placeholder="гггг-мм-дд" value="@php print date('Y-m-d', strtotime('+1 month')); @endphp">
+                                <label for="task" class="col-sm-3 control-label">Период действия</label>
+                                <div class="col-sm-5">
+                                    <div class="input-group date">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                        <input type="text" name="date_from" id="task-name" class="form-control" required
+                                           placeholder="дд-мм-гггг" value="@php print date('d.m.Y'); @endphp">
+                                    </div>
+                                    <div class="input-group date">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                        <input type="text" name="date_to" id="task-name" class="form-control" required
+                                           placeholder="дд-мм-гггг" value="@php print date('d.m.Y', strtotime('+1 month')); @endphp">
+                                    </div>
                                 </div>
                             </div>
 
