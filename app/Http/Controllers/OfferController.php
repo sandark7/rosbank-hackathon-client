@@ -196,8 +196,8 @@ class OfferController extends Controller
 
         $offer->point_id = $request->point_id;
         $offer->point_address = $request->point_address;
-        $offer->date_from = $request->date_from;
-        $offer->date_to = $request->date_to;
+        $offer->date_from = date('Y-m-d', strtotime($request->date_from));
+        $offer->date_to = date('Y-m-d', strtotime($request->date_to));
         $offer->recipient_num = $request->recipient_num;
 
         $offer->save();
