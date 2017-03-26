@@ -37,22 +37,22 @@ class Point extends Model
     {
         $bigdata = [
 
-            'Средний чек' => [
-                'my' => rand(451, 501),
-                'others' => rand(652, 702)
+            'average_check' => [
+                'my' => rand(3051, 3501),
+                'others' => rand(552, 802)
             ],
-            'Транзаций в месяц' => [
-                'my' => rand(100, 149) / 100,
+            'transactions' => [
+                'my' => rand(1000, 1490) / 100,
                 'others' => rand(151, 200) / 100
             ],
-            'Траты в месяц' => [
-                'my' => rand(351, 451) ,
-                'others' => rand(971, 1001)
+            'spending' => [
+                'my' => rand(2151, 2751) ,
+                'others' => rand(771, 1001)
             ],
 
-            'Потенциальные' => rand(3010, 3801),
-            'Уснувшие' => rand(1042, 1802),
-            'Разовые' => rand(2349, 2931),
+            'potential' => rand(101, 230),
+            'sleep' => rand(122, 182),
+            'first' => rand(249, 451),
 
         ];
 
