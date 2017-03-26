@@ -58,3 +58,16 @@ run db migrations
 ```
     php artisan migrate
 ```
+### step 5
+install dependencies
+
+```
+    yarn
+```
+
+### step 6
+build static files
+
+```
+    npm run build
+```
