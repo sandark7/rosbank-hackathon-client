@@ -38,21 +38,21 @@ class Point extends Model
         $bigdata = [
 
             'average_check' => [
-                'my' => rand(3051, 3501),
+                'my' => rand(451, 501),
                 'others' => rand(552, 802)
             ],
             'transactions' => [
-                'my' => rand(1000, 1490) / 100,
+                'my' => rand(100, 149) / 100,
                 'others' => rand(151, 200) / 100
             ],
             'spending' => [
-                'my' => rand(2151, 2751) ,
+                'my' => rand(151, 451) ,
                 'others' => rand(771, 1001)
             ],
 
-            'potential' => rand(101, 230),
-            'sleep' => rand(122, 182),
-            'first' => rand(249, 451),
+            'potential' => rand(3101, 3730),
+            'sleep' => rand(1022, 1802),
+            'first' => rand(2049, 2451),
 
         ];
 
