@@ -35,7 +35,7 @@
         <span>своих клиентов и сможете донести до них</span>
         <span>индивидуальные предложения.</span>
       </div>
-      <a href="{{ route('point_list') }}" class="btn btn-success">Создать кэшбек</a>
+      <a href="{{ route('point_list') }}" class="btn btn-success">Войти</a>
     </div>
     <script src="{{ asset('assets/vendors.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/app.js') }}" type="text/javascript"></script>
