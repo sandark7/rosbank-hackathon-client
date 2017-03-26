@@ -46,6 +46,7 @@
                                         <input type="text" name="date_from" id="task-name" class="form-control" required
                                            placeholder="дд-мм-гггг" value="@php print date('d.m.Y'); @endphp">
                                     </div>
+                                    <span class="offer__dash">&mdash;</span>
                                     <div class="input-group date">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                         <input type="text" name="date_to" id="task-name" class="form-control" required
