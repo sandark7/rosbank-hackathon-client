@@ -51,7 +51,7 @@ class Point extends Model
             ],
 
             'potential' => rand(3101, 3730),
-            'sleep' => rand(1022, 1802),
+            'sleep' => rand(702, 802),
             'first' => rand(2049, 2451),
 
         ];
